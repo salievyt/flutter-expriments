@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MainPage());
 }
 
 class MyApp extends StatelessWidget {
@@ -241,6 +241,100 @@ class _DrinkWaterState extends State<DrinkWater> {
               )
           ),
         )
+    );
+  }
+}
+
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
+
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: CupertinoNavigationBar(
+            // middle: const Text("Drink Water"),
+            // trailing: CupertinoButton(
+            //   padding: EdgeInsets.zero,
+            //   onPressed: () {
+            //     Navigator.pop(context);
+            //   },
+            //   child: const Text("Done", style: TextStyle(color: Colors.blue, fontSize: 20, fontWeight: FontWeight.w600),),
+            // ),
+            // leading: CupertinoButton(
+            //   padding: EdgeInsets.zero,
+            //   onPressed: (){
+            //     Navigator.pop(context);
+            //   },
+            //   child: Icon(Icons.arrow_back_ios_new, color: Colors.black,),
+            // )
+        ),
+        body: Container(
+          margin: EdgeInsets.only(top: 0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 40,
+                        child: Icon(Icons.water_drop, size: 36,color: Colors.white,),
+                        backgroundColor: Colors.lightBlueAccent,
+                      ),
+                      Text("Water", style: TextStyle(color: Colors.black ,fontSize: 20, fontWeight: FontWeight.normal),),
+                    ]
+                  ),
+                  SizedBox(width: 18,),
+                  Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 40,
+                        child: Icon(Icons.cable, size: 36,color: Colors.white,),
+                        backgroundColor: Colors.lightBlueAccent,
+                      ),
+                      Text("Electricity", style: TextStyle(color: Colors.black ,fontSize: 20, fontWeight: FontWeight.normal),),
+                    ],
+                  ),
+
+                  SizedBox(width: 18,),
+                  Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 40,
+                        child: Icon(Icons.medical_information, size: 36,color: Colors.white,),
+                        backgroundColor: Colors.lightBlueAccent,
+                      ),
+                      Text("Medicine", style: TextStyle(color: Colors.black ,fontSize: 20, fontWeight: FontWeight.normal),)
+                    ],
+                  ),
+                  SizedBox(width: 18,),
+                  Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 40,
+                        child: Icon(Icons.book, size: 36,color: Colors.white,),
+                        backgroundColor: Colors.lightBlueAccent,
+                      ),
+                      Text("Books", style: TextStyle(color: Colors.black ,fontSize: 20, fontWeight: FontWeight.normal),)
+                    ],
+                  ),
+                ],
+              ),
+              TextButton(onPressed: (){}, child: Text("See all", style: TextStyle(color: Colors.blue, fontSize: 16, fontWeight: FontWeight.normal),))
+            ],
+          ),
+        )
+      ),
+
     );
   }
 }
